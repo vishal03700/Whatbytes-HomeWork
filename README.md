@@ -1,166 +1,67 @@
-# Django Healthcare Backend
+<img width="842" height="463" alt="image" src="https://github.com/user-attachments/assets/d4823ae2-0998-48f9-ba2f-e7364ac07c8e" />
 
-A comprehensive healthcare backend system built with Django, Django REST Framework, and JWT authentication.
-
-## Features
-
-- User registration and JWT authentication
-- Patient management (CRUD operations)
-- Doctor management (CRUD operations)
-- Patient-doctor assignment system
-- PostgreSQL database support
-- Secure API with proper permissions
-
-## Setup Instructions
-
-### 1. Install Dependencies
-```bash
-pip install -r requirements.txt
-```
-
-### 2. Environment Setup
-Make sure your `.env` file contains:
-```
-SECRET_KEY=your-secret-key
-DEBUG=True
-ALLOWED_HOSTS=localhost,127.0.0.1
-DATABASE_URL=your-postgresql-url
-```
-
-### 3. Database Setup
-```bash
-# Run migrations
-python manage.py makemigrations
-python manage.py migrate
-
-# Create a superuser (optional)
-python manage.py createsuperuser
-```
-
-### 4. Start the Server
-```bash
-python manage.py runserver
-```
 
 ## API Endpoints
+<img width="922" height="711" alt="image" src="https://github.com/user-attachments/assets/c571bb48-c2fa-416c-8766-4ba3f08f03e0" />
 
-### Authentication
+<img width="924" height="413" alt="image" src="https://github.com/user-attachments/assets/55ecfff3-7982-49a1-881b-d4283c49c32a" />
 
-| Method | Endpoint | Description | Auth Required |
-|--------|----------|-------------|---------------|
-| POST | `/api/auth/register/` | Register new user | No |
-| POST | `/api/auth/login/` | Login user | No |
-| POST | `/api/auth/refresh/` | Refresh JWT token | No |
+<img width="928" height="421" alt="image" src="https://github.com/user-attachments/assets/ce4f7890-dcaf-49f2-9d28-8f824cfc7f7a" />
 
-### Patients
+<img width="952" height="705" alt="image" src="https://github.com/user-attachments/assets/49aee916-a249-4d5b-a446-395023a4d1a4" />
 
-| Method | Endpoint | Description | Auth Required |
-|--------|----------|-------------|---------------|
-| GET | `/api/patients/` | List all patients | Yes |
-| POST | `/api/patients/` | Create new patient | Yes |
-| GET | `/api/patients/{id}/` | Get patient details | Yes |
-| PUT | `/api/patients/{id}/` | Update patient | Yes |
-| DELETE | `/api/patients/{id}/` | Delete patient | Yes |
-| GET | `/api/patients/{id}/doctors/` | Get patient's doctors | Yes |
+<img width="921" height="535" alt="image" src="https://github.com/user-attachments/assets/96175766-1007-4cff-98ff-df5b393ddc19" />
 
-### Doctors
+<img width="877" height="409" alt="image" src="https://github.com/user-attachments/assets/afb19126-f346-44c3-8255-bcf61c39bea7" />
 
-| Method | Endpoint | Description | Auth Required |
-|--------|----------|-------------|---------------|
-| GET | `/api/doctors/` | List all doctors | Yes |
-| POST | `/api/doctors/` | Create new doctor | Yes |
-| GET | `/api/doctors/{id}/` | Get doctor details | Yes |
-| PUT | `/api/doctors/{id}/` | Update doctor | Yes |
-| DELETE | `/api/doctors/{id}/` | Delete doctor | Yes |
-| GET | `/api/doctors/{id}/patients/` | Get doctor's patients | Yes |
+<img width="872" height="617" alt="image" src="https://github.com/user-attachments/assets/65fe40f6-7c95-4d57-90a5-edb4d7b82440" />
 
-### Patient-Doctor Mappings
+<img width="869" height="190" alt="image" src="https://github.com/user-attachments/assets/67042896-4c07-4a7f-a5d5-c9cbbb5c7975" />
 
-| Method | Endpoint | Description | Auth Required |
-|--------|----------|-------------|---------------|
-| GET | `/api/mappings/` | List all mappings | Yes |
-| POST | `/api/mappings/` | Create new mapping | Yes |
-| GET | `/api/mappings/{id}/` | Get mapping details | Yes |
-| PUT | `/api/mappings/{id}/` | Update mapping | Yes |
-| DELETE | `/api/mappings/{id}/` | Delete mapping | Yes |
-| GET | `/api/mappings/patient/{patient_id}/` | Get patient's doctors | Yes |
-| DELETE | `/api/mappings/remove/` | Remove assignment | Yes |
 
-## Testing with curl
+<img width="873" height="468" alt="image" src="https://github.com/user-attachments/assets/2ea79363-dff5-4331-a2de-44fbc45b816c" />
 
-### 1. Register a User
-```bash
-curl -X POST http://localhost:8000/api/auth/register/ \
-  -H "Content-Type: application/json" \
-  -d '{
-    "username": "testuser",
-    "email": "test@example.com",
-    "password": "securepassword123",
-    "password_confirm": "securepassword123",
-    "first_name": "Test",
-    "last_name": "User"
-  }'
-```
+<img width="936" height="771" alt="image" src="https://github.com/user-attachments/assets/67db977d-24db-4e97-bbcb-b1d8d1719ba6" />
 
-### 2. Login and Get Token
-```bash
-curl -X POST http://localhost:8000/api/auth/login/ \
-  -H "Content-Type: application/json" \
-  -d '{
-    "username": "testuser",
-    "password": "securepassword123"
-  }'
-```
+<img width="884" height="683" alt="image" src="https://github.com/user-attachments/assets/6311dc54-804a-4a9c-a065-c1bd5d6cf0bd" />
 
-Save the `access` token from the response for authenticated requests.
+<img width="865" height="392" alt="image" src="https://github.com/user-attachments/assets/e4d4e3ee-1e2d-443d-adfd-8d094ae94a50" />
 
-### 3. Create a Patient
-```bash
-curl -X POST http://localhost:8000/api/patients/ \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
-  -d '{
-    "name": "John Doe",
-    "age": 30,
-    "address": "123 Main St",
-    "phone": "+1234567890",
-    "email": "john@example.com"
-  }'
-```
+<img width="870" height="644" alt="image" src="https://github.com/user-attachments/assets/2f7ef593-e891-4f79-a790-0d785c716424" />
+<img width="872" height="188" alt="image" src="https://github.com/user-attachments/assets/58438fce-903e-491d-b74c-c1abe965630b" />
 
-### 4. Create a Doctor
-```bash
-curl -X POST http://localhost:8000/api/doctors/ \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
-  -d '{
-    "name": "Dr. Smith",
-    "specialty": "Cardiology",
-    "license_number": "LIC123456",
-    "phone": "+1987654321",
-    "email": "dr.smith@hospital.com",
-    "years_of_experience": 15
-  }'
-```
+<img width="869" height="439" alt="image" src="https://github.com/user-attachments/assets/b7bcbb53-da35-43e8-a028-54d39859e2a2" />
 
-### 5. Assign Doctor to Patient
-```bash
-curl -X POST http://localhost:8000/api/mappings/ \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
-  -d '{
-    "patient": 1,
-    "doctor": 1,
-    "is_primary": true,
-    "notes": "Primary care assignment"
-  }'
-```
+<img width="885" height="703" alt="image" src="https://github.com/user-attachments/assets/1be77cd8-c4d3-4509-a334-5b844e286721" />
 
-### 6. Get All Patients
-```bash
-curl -X GET http://localhost:8000/api/patients/ \
-  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
-```
+<img width="866" height="641" alt="image" src="https://github.com/user-attachments/assets/0f2fa4a6-e961-4988-9999-6e486b2ed080" />
+
+<img width="852" height="398" alt="image" src="https://github.com/user-attachments/assets/1bc78f71-6d24-4ec5-b35a-01d101e3c340" />
+
+<img width="870" height="582" alt="image" src="https://github.com/user-attachments/assets/6a38dec8-7623-4a2a-aad8-4aaf63ec0837" />
+
+<img width="868" height="198" alt="image" src="https://github.com/user-attachments/assets/89924a3d-0a64-4a05-8c51-81ba0f08049c" />
+
+<img width="869" height="421" alt="image" src="https://github.com/user-attachments/assets/f8c9675a-3aa3-42b5-9f5c-6100b08e095e" />
+
+<img width="867" height="380" alt="image" src="https://github.com/user-attachments/assets/5f62688f-a87b-4984-ab3c-a2dcd60d47db" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Common Issues and Solutions
 
@@ -211,11 +112,4 @@ healthcare/
 - CSRF protection
 - Input validation and sanitization
 
-## Next Steps
-
-1. Add comprehensive unit tests
-2. Implement API rate limiting
-3. Add API documentation with Swagger/OpenAPI
-4. Set up logging and monitoring
-5. Configure production settings
-6. Add email verification for registration
+<img width="854" height="230" alt="image" src="https://github.com/user-attachments/assets/924b78a4-cba9-4362-9faa-927ef2838fa8" />
