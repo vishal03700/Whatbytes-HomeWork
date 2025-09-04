@@ -6,4 +6,4 @@ dj-database-url==2.1.0
 python-dotenv==1.0.0
 gunicorn==21.2.0
 setuptools>=67.0.0
-psycopg[binary]==3.3.2
+psycopg[binary]==3.2.9
